@@ -10,6 +10,28 @@
 # CPP-Data-Structures-Algorithms-Launchpad
 Code repository for C++ Master Course from Coding Blocks
 
+<!-- DISCLAIMER -->
+## Disclaimer
+The code in this repo is what I wrote while pursuing the course. It may be incomplete and some of the programs (~0.5%) may have bugs. Use it intelligently.
+<!-- CONTRIBUTING -->
+## Contributing
+Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+* [Prateek Narang](https://github.com/prateek27) for making this wonderful course.
+
+
+
+
+
+
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/gargVader/CPP-Data-Structures-Algorithms-Launchpad.svg?style=flat-square
