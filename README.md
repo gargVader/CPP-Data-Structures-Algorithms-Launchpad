@@ -8,6 +8,16 @@
 
 
 # CPP-Data-Structures-Algorithms-Launchpad
+
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
+* [About](#about)
+* [Disclaimer](#disclaimer)
+* [Contributing](#contributing)
+* [Acknowledgements](#acknowledgements)
+
+<!-- About -->
+## About
 Code repository for C++ Master Course from Coding Blocks
 
 <!-- DISCLAIMER -->
