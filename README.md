@@ -1,5 +1,5 @@
 <!-- PROJECT SHIELDS -->
-
+[![HitCount](http://hits.dwyl.com/gargVader/CPP-Data-Structures-Algorithms-Launchpad.svg)](http://hits.dwyl.com/gargVader/CPP-Data-Structures-Algorithms-Launchpad)
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
