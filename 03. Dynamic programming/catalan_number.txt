@@ -1,0 +1,36 @@
+#include<iostream>
+#include<vector>
+
+
+using namespace std;
+
+
+int cata(int n)
+{
+
+    vector<int> l(n+1,0);
+
+    l[0]=1;
+    l[1]=1;
+
+    for(int i=2;i<=n;i++)
+       {
+
+           for(int j=0;j<i;j++)
+           {
+              l[i]+=l[j]*l[i-j-1];
+           }
+       }
+
+    return l[n];
+}
+
+
+
+int main()
+{
+    int n;
+    cin>>n;
+
+    cout<<cata(n);
+}
