@@ -15,4 +15,3 @@ These are mostly guidelines, not rules. Use your best judgment, and feel free to
 3. Commit your Changes (`git commit -m 'Added coin change problem'`)
 4. Push to the Branch (`git push origin girish/dynamic-programming`)
 5. Open a Pull Request
-Pull Requests
