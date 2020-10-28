@@ -1,56 +1,79 @@
+/*#include<bits/stdc++.h>
+int MatrixChainOrder(int p[], int i, int j)
+{
+    if(i == j)
+        return 0;
+    int mid=(i+j)/2;
+
+int x=MatrixChainOrder(p,i,mid);
+    int y=MatrixChainOrder(p,mid+1,j);
+    return min(x,y);
+}
+int mcm(int* p, int n){
+
+  /* Don't write main().
+   *  Don't read input, it is passed as function argument.
+   *  Return output and don't print it.
+   *  Taking input and printing output is handled automatically.
+  */
+/*int s=0;
+    int e=n;
+    return MatrixChainOrder(p,s,e);
+
+}*/
+
+
+#include<stdio.h>
+#include<limits.h>
 #include<bits/stdc++.h>
 using namespace std;
 
-/* given a sequence of matrices find the minimum cost of multiplying 
- * all the matrix together and defination of matrix is
- * Ai = arr[i] * arr[i - 1] ... for i 1, 2, 3, 4,... n
- */
+// Matrix Ai has dimension p[i-1] x p[i] for i = 1..n
 
-/* recursive memorized function */
-int mcm_rec(int arr[], int start, int end) {
-    // one matrix has 0 cost of multiplication
-    if(start >= end)    return 0;
-    
-    int minimum_cost = INT_MAX;
-    /* try all indexes where parathenization is possible */
-    for(int k = start; k < end; k++) {
-        int temp = mcm_rec(arr, start, k) + mcm_rec(arr, k + 1, end) + arr[start - 1] * arr[k] * arr[end];
-        minimum_cost = min(temp, minimum_cost);
-    }
-    return minimum_cost;
-}
+int mcm(int* p, int n)
+{
+    n++;
+    int m[n][n];
+    int i, j, k, L, q;
 
+    for (i=1; i<n; i++)
+        m[i][i] = 0;    //number of multiplications are 0(zero) when there is only one matrix
 
-/* tabular DP */
-int mcm_dp(int arr[], int num_matrix) {
-    int n = num_matrix + 1;
-    int dp[n][n];
-    for(int i = 0; i < n; i++) {
-        for(int j = 0; j < n; j++) {
-            dp[i][j] = 0;
-        }
-    }
-    for(int l = 2; l < n; l++) {
-        for(int i = 1; i < n - l + 1; i++) {
-            int j = l + i - 1; 
-            dp[i][j] = INT_MAX;
-            /* i and j denote the length of matrix chain */
-            for(int k = i; k < j; k++) {
-                int temp = dp[i][k] + dp[k + 1][j] + arr[i - 1] * arr[k] * arr[j];
-                if(dp[i][j] > temp) {
-                    dp[i][j] = temp;
+    //Here L is chain length. It varies from length 2 to length n.
+    for (L=2; L<n; L++)
+    {
+        for (i=1; i<n-L+1; i++)
+        {
+            j = i+L-1;
+            m[i][j] = INT_MAX;  //assigning to maximum value
+
+            for (k=i; k<=j-1; k++)
+            {
+                q = m[i][k] + m[k+1][j] + p[i-1]*p[k]*p[j];
+                if (q < m[i][j])
+                {
+                    m[i][j] = q;    //if number of multiplications found less that number will be updated.
                 }
             }
         }
     }
-    return dp[1][n - 1];
+
+    return m[1][n-1];   //returning the final answer which is M[1][n]
+
 }
 
-int main(int argc, char const *argv[]) {
-    int arr[] = {40, 20, 30, 10, 30};
-    int num_matrix = (sizeof(arr) / sizeof(arr[0])) - 1;
-    
-    cout << mcm_dp(arr, num_matrix) << endl;
-    
-    return 0;
+int main(){
+
+  int n;
+  cin >> n;
+  int* p = new int[n];
+
+  for(int i = 0; i <= n; i++){
+    cin >> p[i];
+  }
+
+  cout << mcm(p, n);
+
 }
+
+
