@@ -9,6 +9,7 @@ int minChangeBottomUp(int coins[], int numCoins, int n) {
 
 	for (int i = 1; i <= n; i++) {
 
+
 		int ans = INT_MAX;
 
 		for (int j = 0; j < numCoins; j++) {

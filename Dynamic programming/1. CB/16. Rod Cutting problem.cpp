@@ -1,4 +1,4 @@
-#include<iostream>
+#include<bits/stdc++.h>
 #define MAX 1000
 using namespace std;
 
@@ -25,9 +25,35 @@ int maxPrice(int n, int price[], int cost, int dp[]) {
 	return ans;
 }
 
+
+int maxPriceBottomUp(int price[], int n) {
+
+	int dp[n + 1] = {0};
+
+	for (int i = 1; i <= n; i++) {
+		// I am trying to sell rod of length = i
+		int ans = INT_MIN;
+
+		// I try to break the rod into j, i-j
+		// j, I can get from dp[]
+		// i-j length I will sold singly
+		for (int j = 0; j < i; j++) {
+			int op = dp[j] + price[i - j];
+			ans = max(ans, op);
+		}
+
+		dp[i] = ans;
+	}
+
+	return dp[n];
+
+}
+
+
+
 int main() {
-	int n = 4;
-	int price[] = {0, 1, 3, 2, 5};
+	int n = 9;
+	int price[] = {0, 1, 5, 8, 9, 10, 17, 17, 20};
 
 	int dp[MAX] = {0};
 
@@ -37,4 +63,5 @@ int main() {
 	for (int i = 0; i <= n; i++) {
 		cout << dp[i] << " ";
 	} cout << endl;
+	cout << maxPriceBottomUp(price, n) << endl;
 }

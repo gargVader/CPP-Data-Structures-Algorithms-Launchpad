@@ -3,18 +3,17 @@
 using namespace std;
 
 
-// int maxPriceBottomUp(int price[], int i, int j) {
+int maxPriceBottomUp(int price[], int n) {
 
-// 	int n = sizeof(price) / sizeof(price[0]);
-// 	int dp[n + 1] = {0};
+	int dp[n + 1][n + 1] = {0};
 
-// 	for (int i = 1; i <= n; i++) {
-// 		for (int j = 1; j <= n; j++) {
-// 			dp[i][j] =
-// 		}
-// 	}
+	for (int i = 1; i <= n; i++) {
+		for (int j = 1; j <= n; j++) {
+			dp[i][j] =
+		}
+	}
 
-// }
+}
 
 
 int maxPrice(int price[], int i, int j, int cost, int year, int dp[][MAX]) {
