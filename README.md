@@ -42,6 +42,7 @@ These are mostly guidelines, not rules. Use your best judgment, and feel free to
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 * [Prateek Narang](https://github.com/prateek27) for making this wonderful course.
+<img src="https://i.imgur.com/2GzL51s.jpg">
 
 
 
